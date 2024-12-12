@@ -5,16 +5,63 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.cmj.firebasecrud_guitarras.databinding.ActivityMainBinding
+import com.google.firebase.FirebaseApp
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.Firebase
+import com.google.firebase.database.database
 
 class MainActivity : AppCompatActivity() {
+    private var contexto = this
+    private lateinit var binding: ActivityMainBinding
+    private lateinit var databaseRef: DatabaseReference
+    private lateinit var usuarioCRUD: UsuarioCRUD
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        FirebaseApp.initializeApp(applicationContext)
+
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+
+        binding = ActivityMainBinding.inflate(layoutInflater)
+
+        setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+
+        //Cosas de Firebase
+        databaseRef = Firebase.database.reference
+        usuarioCRUD = UsuarioCRUD(contexto, databaseRef)
+
+        //Usuario de prueba
+        /*
+        var usuarioPrueba = Usuario("", "Amo", "lmao")
+        val idRef = usuarioCRUD.registrarUsuario(usuarioPrueba)
+        usuarioPrueba.key = idRef
+
+        println(usuarioPrueba)*/
+
+        with(binding){
+            val nombre = nombreET.text
+            val pass = passET.text
+
+            botonLogin.setOnClickListener {
+                if(!nombre.isNullOrEmpty()){
+                    if(!pass.isNullOrEmpty()){
+                        val sesion = Usuario("", nombre.toString(), pass.toString())
+
+                        usuarioCRUD.buscarUsuario(sesion, { usuario ->
+                            if(usuario != null){
+                                Utils.hacerTostada(contexto, "Inicio de sesión correcto")
+                                println(usuario)
+                            }
+                        })
+                    }else Utils.hacerTostada(contexto, "La contraseña está vacía")
+                }else Utils.hacerTostada(contexto, "El nombre está vacío")
+            }
         }
     }
 }
