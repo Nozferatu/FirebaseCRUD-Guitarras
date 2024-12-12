@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">FirebaseCRUD-Guitarras</string>
+    <string name="crear_cuenta"><u>Crear cuenta</u></string>
 </resources>
