@@ -55,12 +55,12 @@ class MainActivity : AppCompatActivity() {
 
                         usuarioCRUD.buscarUsuario(sesion, { usuario ->
                             if(usuario != null){
-                                Utils.hacerTostada(contexto, "Inicio de sesión correcto")
+                                hacerTostada(contexto, "Inicio de sesión correcto")
                                 println(usuario)
                             }
                         })
-                    }else Utils.hacerTostada(contexto, "La contraseña está vacía")
-                }else Utils.hacerTostada(contexto, "El nombre está vacío")
+                    }else hacerTostada(contexto, "La contraseña está vacía")
+                }else hacerTostada(contexto, "El nombre está vacío")
             }
         }
     }

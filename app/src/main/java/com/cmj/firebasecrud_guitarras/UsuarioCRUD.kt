@@ -34,9 +34,9 @@ class UsuarioCRUD(
                     }
                 }
 
-                if(!usuarioExiste) Utils.hacerTostada(contexto, "El usuario no existe")
+                if(!usuarioExiste) hacerTostada(contexto, "El usuario no existe")
                 if(passwordValida) callback(usuarioEncontrado)
-                else Utils.hacerTostada(contexto, "La contraseña no es correcta")
+                else hacerTostada(contexto, "La contraseña no es correcta")
             }
 
             override fun onCancelled(error: DatabaseError) {
