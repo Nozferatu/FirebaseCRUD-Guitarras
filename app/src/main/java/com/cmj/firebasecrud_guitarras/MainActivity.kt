@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
 
         //Usuario de prueba
         /*
-        var usuarioPrueba = Usuario("", "Amo", "lmao")
+        var usuarioPrueba = Usuario("", "Amo", "lmao".toSHA256())
         val idRef = usuarioCRUD.registrarUsuario(usuarioPrueba)
         usuarioPrueba.key = idRef
 
@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
             botonLogin.setOnClickListener {
                 if(!nombre.isNullOrEmpty()){
                     if(!pass.isNullOrEmpty()){
-                        val sesion = Usuario("", nombre.toString(), pass.toString())
+                        val sesion = Usuario("", nombre.toString().trim(), pass.toString().toSHA256())
 
                         usuarioCRUD.buscarUsuario(sesion, { usuario ->
                             if(usuario != null){
