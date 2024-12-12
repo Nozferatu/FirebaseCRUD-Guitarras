@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "759322425718",
+    "firebase_url": "https://fir-crud-guitarras-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "fir-crud-guitarras",
+    "storage_bucket": "fir-crud-guitarras.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:759322425718:android:821704d0b20b94bee6e257",
+        "android_client_info": {
+          "package_name": "com.cmj.firebasecrud_guitarras"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC54ED9BMhZqBUQcYZu4Yp1dJsnd-yOCuc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
