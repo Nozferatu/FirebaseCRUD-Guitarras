@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -49,12 +51,9 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     //Firebase
-    implementation ("com.google.firebase:firebase-database:20.0.2")
-    implementation ("com.google.firebase:firebase-core:20.0.0")
-    implementation ("com.google.firebase:firebase-storage:20.0.0")
-    implementation ("com.google.firebase:firebase-auth:21.0.1")
+    implementation(libs.firebase.database.ktx)
+    implementation(platform(libs.firebase.bom))
     implementation ("com.github.bumptech.glide:glide:4.12.0")
-    implementation ("com.google.firebase:firebase-analytics:20.0.2")
     implementation ("com.google.android.gms:play-services-auth:20.1.0")
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.5.1")
 
