@@ -10,7 +10,7 @@ class UsuarioCRUD(
     var contexto: Context,
     var databaseRef: DatabaseReference
 ) {
-    fun buscarUsuario(usuario: Usuario, callback: (Usuario?) -> Unit) {
+    fun buscarUsuario(usuario: Usuario, verbose: Boolean = false, callback: (Usuario?) -> Unit) {
         var usuarioEncontrado: Usuario? = null
         var usuarioExiste = false
         var passwordValida = false
@@ -34,9 +34,31 @@ class UsuarioCRUD(
                     }
                 }
 
-                if(!usuarioExiste) hacerTostada(contexto, "El usuario no existe")
+                if(!usuarioExiste && verbose) hacerTostada(contexto, "El usuario no existe")
                 if(passwordValida) callback(usuarioEncontrado)
-                else hacerTostada(contexto, "La contraseña no es correcta")
+                else if(verbose) hacerTostada(contexto, "La contraseña no es correcta")
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                callback(null)
+            }
+        })
+    }
+
+    fun usuarioExiste(usuario: Usuario, callback: (Boolean?) -> Unit){
+        databaseRef.child("usuarios").addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                for (pojo in snapshot.children) {
+                    val usuarioPojo = pojo.getValue(Usuario::class.java)
+
+                    if (usuarioPojo != null) {
+                        if (usuario.nombre == usuarioPojo.nombre) {
+                            callback(true)
+
+                            break
+                        }
+                    }
+                }
             }
 
             override fun onCancelled(error: DatabaseError) {
