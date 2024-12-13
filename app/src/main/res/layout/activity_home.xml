@@ -22,7 +22,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/botonCrearGuitarra"
-        android:layout_width="wrap_content"
+        android:layout_width="175dp"
         android:layout_height="wrap_content"
         android:padding="15dp"
         android:layout_marginVertical="20dp"
@@ -36,7 +36,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/botonModificarGuitarra"
-        android:layout_width="wrap_content"
+        android:layout_width="175dp"
         android:layout_height="wrap_content"
         android:padding="15dp"
         android:layout_marginVertical="20dp"
@@ -50,7 +50,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/botonBorrarGuitarra"
-        android:layout_width="wrap_content"
+        android:layout_width="175dp"
         android:layout_height="wrap_content"
         android:padding="15dp"
         android:layout_marginVertical="20dp"
