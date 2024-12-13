@@ -7,4 +7,87 @@
     android:layout_height="match_parent"
     tools:context=".CrearCuentaActivity">
 
+    <TextView
+        android:id="@+id/tituloForm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="40dp"
+        android:text="Creación de la cuenta"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/nombreIL"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/nombreIL"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tituloForm"
+        app:layout_constraintBottom_toTopOf="@id/passIL"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nombreET"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Nombre"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passIL"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nombreIL"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passET"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Contraseña"
+            android:inputType="textPassword"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passRepeIL"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/passIL"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passRepeET"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Repetir contraseña"
+            android:inputType="textPassword"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/botonCrearCuenta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/design_default_color_primary_variant"
+        android:padding="15dp"
+        android:text="Crear cuenta"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/passRepeIL"
+        app:layout_constraintVertical_bias="0.15" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

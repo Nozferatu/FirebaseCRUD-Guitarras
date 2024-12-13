@@ -1,5 +1,6 @@
 package com.cmj.firebasecrud_guitarras
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -48,17 +49,22 @@ class MainActivity : AppCompatActivity() {
             val nombre = nombreET.text
             val pass = passET.text
 
+            botonCrearUsuario.setOnClickListener {
+                val intent = Intent(contexto, CrearCuentaActivity::class.java)
+                startActivity(intent)
+            }
+
             botonLogin.setOnClickListener {
                 if(!nombre.isNullOrEmpty()){
                     if(!pass.isNullOrEmpty()){
                         val sesion = Usuario("", nombre.toString().trim(), pass.toString().toSHA256())
 
-                        usuarioCRUD.buscarUsuario(sesion, { usuario ->
-                            if(usuario != null){
+                        usuarioCRUD.buscarUsuario(sesion, true) { usuario ->
+                            if (usuario != null) {
                                 hacerTostada(contexto, "Inicio de sesión correcto")
                                 println(usuario)
                             }
-                        })
+                        }
                     }else hacerTostada(contexto, "La contraseña está vacía")
                 }else hacerTostada(contexto, "El nombre está vacío")
             }
