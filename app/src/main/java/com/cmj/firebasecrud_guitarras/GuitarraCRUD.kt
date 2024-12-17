@@ -6,7 +6,7 @@ class GuitarraCRUD(
     var databaseRef: DatabaseReference
 ) {
     fun persistirGuitarra(guitarra: Guitarra){
-        if(guitarra.key.isNotBlank()){
+        if(guitarra.key?.isNotBlank() == true){
 
         }else{
             val idRef = databaseRef.child("guitarras").push().key!!

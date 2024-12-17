@@ -30,6 +30,11 @@ class HomeActivity : AppCompatActivity() {
                 val intent = Intent(contexto, PersistirGuitarraActivity::class.java)
                 startActivity(intent)
             }
+
+            botonModificarGuitarra.setOnClickListener {
+                val intent = Intent(contexto, ListadoGuitarras::class.java)
+                startActivity(intent)
+            }
         }
     }
 }
