@@ -56,6 +56,7 @@ class CrearCuentaActivity : AppCompatActivity() {
                                     if(usuarioExiste != null){
                                         if(!usuarioExiste){
                                             usuarioCRUD.registrarUsuario(usuarioNuevo)
+                                            hacerTostada(contexto, "Usuario creado. Vuelva atrás para iniciar sesión")
                                         }else hacerTostada(contexto, "El usuario ya existe")
                                     }
                                 }
