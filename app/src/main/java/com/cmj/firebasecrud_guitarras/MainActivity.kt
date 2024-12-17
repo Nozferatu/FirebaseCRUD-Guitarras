@@ -62,7 +62,11 @@ class MainActivity : AppCompatActivity() {
                         usuarioCRUD.buscarUsuario(sesion, true) { usuario ->
                             if (usuario != null) {
                                 hacerTostada(contexto, "Inicio de sesión correcto")
-                                println(usuario)
+
+                                val intent = Intent(contexto, HomeActivity::class.java)
+                                intent.putExtra("sesion", usuario)
+
+                                startActivity(intent)
                             }
                         }
                     }else hacerTostada(contexto, "La contraseña está vacía")

@@ -1,22 +1,20 @@
 package com.cmj.firebasecrud_guitarras
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.cmj.firebasecrud_guitarras.databinding.ActivityHomeBinding
+import com.cmj.firebasecrud_guitarras.databinding.ActivityPersistirGuitarraBinding
 
-class HomeActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityHomeBinding
-    private val contexto = this
+class PersistirGuitarraActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityPersistirGuitarraBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        binding = ActivityHomeBinding.inflate(layoutInflater)
+        binding = ActivityPersistirGuitarraBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -26,10 +24,7 @@ class HomeActivity : AppCompatActivity() {
         }
 
         with(binding){
-            botonCrearGuitarra.setOnClickListener {
-                val intent = Intent(contexto, PersistirGuitarraActivity::class.java)
-                startActivity(intent)
-            }
+
         }
     }
 }
