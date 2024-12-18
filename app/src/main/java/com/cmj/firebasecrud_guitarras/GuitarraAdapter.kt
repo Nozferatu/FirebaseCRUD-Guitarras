@@ -1,14 +1,17 @@
 package com.cmj.firebasecrud_guitarras
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.database.FirebaseDatabase
 
-class GuitarraAdapter(private val listaGuitarras: MutableList<Guitarra>): RecyclerView.Adapter<GuitarraAdapter.GuitarraViewHolder>() {
+class GuitarraAdapter(private val listaGuitarras: MutableList<Guitarra>, val accion: AccionGuitarraAdapter): RecyclerView.Adapter<GuitarraAdapter.GuitarraViewHolder>() {
     private lateinit var contexto: Context
     private var listadaFiltrada = listaGuitarras
 
@@ -38,5 +41,37 @@ class GuitarraAdapter(private val listaGuitarras: MutableList<Guitarra>): Recycl
         holder.modelo.text = guitarraActual.modelo
         holder.anio.text = guitarraActual.anio.toString()
         holder.precio.text = guitarraActual.precio.toString()
+
+        holder.itemView.setOnClickListener {
+            val databaseRef= FirebaseDatabase.getInstance().reference
+
+            when(accion){
+                AccionGuitarraAdapter.BORRAR -> {
+                    val builder: AlertDialog.Builder = AlertDialog.Builder(contexto)
+                    builder
+                        .setTitle("Confirmación")
+                        .setMessage("¿Está seguro de que quiere borrar esta guitarra?")
+                        .setPositiveButton("Sí") { _, _ ->
+                            listadaFiltrada.removeAt(position)
+                            databaseRef.child("guitarras").child(guitarraActual.key!!).removeValue()
+                            hacerTostada(contexto, "Guitarra borrada")
+
+                            notifyItemRemoved(position)
+                            notifyItemRangeChanged(position, listadaFiltrada.size)
+                        }
+                        .setNegativeButton("No") { _, _ ->
+                            hacerTostada(contexto, "Cancelado")
+                        }
+
+                    val dialog: AlertDialog = builder.create()
+                    dialog.show()
+                }
+                AccionGuitarraAdapter.MODIFICAR -> {
+                    val intent = Intent(contexto, PersistirGuitarraActivity::class.java)
+
+                    contexto.startActivity(intent)
+                }
+            }
+        }
     }
 }

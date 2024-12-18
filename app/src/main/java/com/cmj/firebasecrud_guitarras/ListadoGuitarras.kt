@@ -60,7 +60,7 @@ class ListadoGuitarras : AppCompatActivity() {
                 })
 
 
-            adapter = GuitarraAdapter(lista)
+            adapter = GuitarraAdapter(lista, AccionGuitarraAdapter.BORRAR)
             recycler.adapter = adapter
             recycler.setHasFixedSize(true)
             recycler.layoutManager = LinearLayoutManager(applicationContext)

@@ -12,6 +12,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.database
 
 class PersistirGuitarraActivity : AppCompatActivity() {
+    private val contexto = this
     private lateinit var binding: ActivityPersistirGuitarraBinding
     private lateinit var databaseRef: DatabaseReference
     private lateinit var guitarraCRUD: GuitarraCRUD
@@ -33,7 +34,7 @@ class PersistirGuitarraActivity : AppCompatActivity() {
 
         //Cosas de Firebase
         databaseRef = Firebase.database.reference
-        guitarraCRUD = GuitarraCRUD(databaseRef)
+        guitarraCRUD = GuitarraCRUD(contexto, databaseRef)
 
         with(binding){
             botonPersistirGuitarra.setOnClickListener {
