@@ -12,6 +12,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 import com.cmj.firebasecrud_guitarras.R
 import com.cmj.firebasecrud_guitarras.hacerTostada
+import com.cmj.firebasecrud_guitarras.vistas.PersistirGuitarraActivity
 import com.google.firebase.database.FirebaseDatabase
 
 class GuitarraAdapter(private val listaGuitarras: MutableList<Guitarra>, val accion: AccionGuitarraAdapter): RecyclerView.Adapter<GuitarraAdapter.GuitarraViewHolder>() {

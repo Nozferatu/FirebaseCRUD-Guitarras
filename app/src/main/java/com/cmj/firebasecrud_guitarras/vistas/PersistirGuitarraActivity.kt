@@ -1,4 +1,4 @@
-package com.cmj.firebasecrud_guitarras.pojo
+package com.cmj.firebasecrud_guitarras.vistas
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -7,6 +7,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.cmj.firebasecrud_guitarras.R
 import com.cmj.firebasecrud_guitarras.databinding.ActivityPersistirGuitarraBinding
+import com.cmj.firebasecrud_guitarras.pojo.Guitarra
+import com.cmj.firebasecrud_guitarras.pojo.GuitarraCRUD
 import com.google.firebase.Firebase
 import com.google.firebase.FirebaseApp
 import com.google.firebase.database.DatabaseReference

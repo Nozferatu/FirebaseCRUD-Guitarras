@@ -1,4 +1,4 @@
-package com.cmj.firebasecrud_guitarras
+package com.cmj.firebasecrud_guitarras.vistas
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -7,6 +7,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.cmj.firebasecrud_guitarras.R
 import com.cmj.firebasecrud_guitarras.databinding.ActivityListadoGuitarrasBinding
 import com.cmj.firebasecrud_guitarras.pojo.AccionGuitarraAdapter
 import com.cmj.firebasecrud_guitarras.pojo.Guitarra

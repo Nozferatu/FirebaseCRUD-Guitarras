@@ -13,16 +13,16 @@
         android:theme="@style/Theme.FirebaseCRUDGuitarras"
         tools:targetApi="31">
         <activity
-            android:name=".ListadoGuitarras"
+            android:name=".vistas.ListadoGuitarras"
             android:exported="false" />
         <activity
-            android:name=".pojo.PersistirGuitarraActivity"
+            android:name=".vistas.PersistirGuitarraActivity"
             android:exported="false" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".vistas.HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".usuario.CrearCuentaActivity"
+            android:name=".vistas.CrearCuentaActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

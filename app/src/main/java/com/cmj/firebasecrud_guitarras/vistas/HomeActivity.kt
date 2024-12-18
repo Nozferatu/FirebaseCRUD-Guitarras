@@ -1,4 +1,4 @@
-package com.cmj.firebasecrud_guitarras
+package com.cmj.firebasecrud_guitarras.vistas
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,9 +6,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.cmj.firebasecrud_guitarras.R
 import com.cmj.firebasecrud_guitarras.databinding.ActivityHomeBinding
 import com.cmj.firebasecrud_guitarras.pojo.AccionGuitarraAdapter
-import com.cmj.firebasecrud_guitarras.pojo.PersistirGuitarraActivity
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding

@@ -7,9 +7,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.cmj.firebasecrud_guitarras.databinding.ActivityMainBinding
-import com.cmj.firebasecrud_guitarras.usuario.CrearCuentaActivity
+import com.cmj.firebasecrud_guitarras.vistas.CrearCuentaActivity
 import com.cmj.firebasecrud_guitarras.usuario.Usuario
 import com.cmj.firebasecrud_guitarras.usuario.UsuarioCRUD
+import com.cmj.firebasecrud_guitarras.vistas.HomeActivity
 import com.google.firebase.FirebaseApp
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.Firebase
