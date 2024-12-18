@@ -32,11 +32,27 @@ class PersistirGuitarraActivity : AppCompatActivity() {
             insets
         }
 
+        val guitarraIntent = intent.getSerializableExtra("guitarra") as Guitarra?
+
         //Cosas de Firebase
         databaseRef = Firebase.database.reference
         guitarraCRUD = GuitarraCRUD(contexto, databaseRef)
 
+
         with(binding){
+            var guitarra: Guitarra
+
+            if(guitarraIntent != null) {
+                guitarra = guitarraIntent
+
+                nombreET.setText(guitarra.nombre)
+                descripcionET.setText(guitarra.descripcion)
+                marcaET.setText(guitarra.marca)
+                modeloET.setText(guitarra.modelo)
+                anioET.setText(guitarra.anio.toString())
+                precioET.setText(guitarra.precio.toString())
+            }
+
             botonPersistirGuitarra.setOnClickListener {
                 val nombre = nombreET.text.toString()
                 val descripcion = descripcionET.text.toString()
@@ -45,8 +61,8 @@ class PersistirGuitarraActivity : AppCompatActivity() {
                 val anio = anioET.text.toString()
                 val precio = precioET.text.toString()
 
-                val guitarra = Guitarra(
-                    "",
+                guitarra = Guitarra(
+                    guitarraIntent?.key ?: "",
                     nombre,
                     descripcion,
                     marca,

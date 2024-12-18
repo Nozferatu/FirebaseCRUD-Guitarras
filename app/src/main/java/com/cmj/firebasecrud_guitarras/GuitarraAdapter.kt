@@ -68,6 +68,7 @@ class GuitarraAdapter(private val listaGuitarras: MutableList<Guitarra>, val acc
                 }
                 AccionGuitarraAdapter.MODIFICAR -> {
                     val intent = Intent(contexto, PersistirGuitarraActivity::class.java)
+                    intent.putExtra("guitarra", guitarraActual)
 
                     contexto.startActivity(intent)
                 }

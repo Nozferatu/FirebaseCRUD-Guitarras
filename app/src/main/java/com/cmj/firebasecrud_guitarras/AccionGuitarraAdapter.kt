@@ -1,5 +1,7 @@
 package com.cmj.firebasecrud_guitarras
 
-enum class AccionGuitarraAdapter {
+import java.io.Serializable
+
+enum class AccionGuitarraAdapter: Serializable {
     MODIFICAR, BORRAR
 }

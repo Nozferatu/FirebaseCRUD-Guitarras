@@ -33,11 +33,15 @@ class HomeActivity : AppCompatActivity() {
 
             botonModificarGuitarra.setOnClickListener {
                 val intent = Intent(contexto, ListadoGuitarras::class.java)
+                intent.putExtra("accion", AccionGuitarraAdapter.MODIFICAR)
+
                 startActivity(intent)
             }
 
             botonBorrarGuitarra.setOnClickListener {
                 val intent = Intent(contexto, ListadoGuitarras::class.java)
+                intent.putExtra("accion", AccionGuitarraAdapter.BORRAR)
+
                 startActivity(intent)
             }
         }

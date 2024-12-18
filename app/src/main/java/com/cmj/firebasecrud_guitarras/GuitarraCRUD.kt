@@ -9,7 +9,9 @@ class GuitarraCRUD(
 ) {
     fun persistirGuitarra(guitarra: Guitarra){
         if(guitarra.key?.isNotBlank() == true){
+            databaseRef.child("guitarras").child(guitarra.key!!).setValue(guitarra)
 
+            hacerTostada(contexto, "Guitarra modificada")
         }else{
             val idRef = databaseRef.child("guitarras").push().key!!
             guitarra.key = idRef

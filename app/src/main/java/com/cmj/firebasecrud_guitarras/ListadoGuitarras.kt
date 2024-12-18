@@ -21,6 +21,7 @@ class ListadoGuitarras : AppCompatActivity() {
     private lateinit var lista: MutableList<Guitarra>
     private lateinit var databaseRef: DatabaseReference
     private lateinit var adapter: GuitarraAdapter
+    private lateinit var accion: AccionGuitarraAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,6 +35,8 @@ class ListadoGuitarras : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        accion = intent.getSerializableExtra("accion") as AccionGuitarraAdapter
 
         //Cosas de Firebase
         databaseRef = FirebaseDatabase.getInstance().reference
@@ -60,7 +63,7 @@ class ListadoGuitarras : AppCompatActivity() {
                 })
 
 
-            adapter = GuitarraAdapter(lista, AccionGuitarraAdapter.BORRAR)
+            adapter = GuitarraAdapter(lista, accion)
             recycler.adapter = adapter
             recycler.setHasFixedSize(true)
             recycler.layoutManager = LinearLayoutManager(applicationContext)
