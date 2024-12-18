@@ -50,7 +50,7 @@ class PersistirGuitarraActivity : AppCompatActivity() {
                 descripcionET.setText(guitarra.descripcion)
                 marcaET.setText(guitarra.marca)
                 modeloET.setText(guitarra.modelo)
-                anioET.setText(guitarra.anio.toString())
+                rating.rating = guitarra.rating!!
                 precioET.setText(guitarra.precio.toString())
             }
 
@@ -59,7 +59,7 @@ class PersistirGuitarraActivity : AppCompatActivity() {
                 val descripcion = descripcionET.text.toString()
                 val marca = marcaET.text.toString()
                 val modelo = modeloET.text.toString()
-                val anio = anioET.text.toString()
+                val rating = rating.rating
                 val precio = precioET.text.toString()
 
                 val calendar = Calendar.getInstance()
@@ -76,7 +76,7 @@ class PersistirGuitarraActivity : AppCompatActivity() {
                     descripcion,
                     marca,
                     modelo,
-                    anio.toInt(),
+                    rating,
                     precio.toFloat()
                 )
 

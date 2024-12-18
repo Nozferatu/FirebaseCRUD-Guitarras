@@ -9,6 +9,6 @@ data class Guitarra(
     var descripcion: String? = "",
     var marca: String? = "",
     var modelo: String? = "",
-    var anio: Int? = 2000,
+    var rating: Float? = 5f,
     var precio: Float? = 100f
 ): Serializable

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.RatingBar
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
@@ -21,7 +22,7 @@ class GuitarraAdapter(private val listaGuitarras: MutableList<Guitarra>, val acc
         val descripcion: TextView = itemView.findViewById(R.id.descripcion)
         val marca: TextView = itemView.findViewById(R.id.marca)
         val modelo: TextView = itemView.findViewById(R.id.modelo)
-        val anio: TextView = itemView.findViewById(R.id.anio)
+        val rating: RatingBar = itemView.findViewById(R.id.rating)
         val precio: TextView = itemView.findViewById(R.id.precio)
     }
 
@@ -39,7 +40,7 @@ class GuitarraAdapter(private val listaGuitarras: MutableList<Guitarra>, val acc
         holder.descripcion.text = guitarraActual.descripcion
         holder.marca.text = guitarraActual.marca
         holder.modelo.text = guitarraActual.modelo
-        holder.anio.text = guitarraActual.anio.toString()
+        holder.rating.rating = guitarraActual.rating!!
         holder.precio.text = guitarraActual.precio.toString()
 
         holder.itemView.setOnClickListener {
