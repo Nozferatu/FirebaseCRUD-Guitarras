@@ -35,6 +35,11 @@ class HomeActivity : AppCompatActivity() {
                 val intent = Intent(contexto, ListadoGuitarras::class.java)
                 startActivity(intent)
             }
+
+            botonBorrarGuitarra.setOnClickListener {
+                val intent = Intent(contexto, ListadoGuitarras::class.java)
+                startActivity(intent)
+            }
         }
     }
 }
