@@ -16,13 +16,13 @@
             android:name=".ListadoGuitarras"
             android:exported="false" />
         <activity
-            android:name=".PersistirGuitarraActivity"
+            android:name=".pojo.PersistirGuitarraActivity"
             android:exported="false" />
         <activity
             android:name=".HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".CrearCuentaActivity"
+            android:name=".usuario.CrearCuentaActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

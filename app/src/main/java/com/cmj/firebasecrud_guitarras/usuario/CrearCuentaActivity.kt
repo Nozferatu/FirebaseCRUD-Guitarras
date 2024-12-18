@@ -1,11 +1,14 @@
-package com.cmj.firebasecrud_guitarras
+package com.cmj.firebasecrud_guitarras.usuario
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.cmj.firebasecrud_guitarras.R
 import com.cmj.firebasecrud_guitarras.databinding.ActivityCrearCuentaBinding
+import com.cmj.firebasecrud_guitarras.hacerTostada
+import com.cmj.firebasecrud_guitarras.toSHA256
 import com.google.firebase.Firebase
 import com.google.firebase.FirebaseApp
 import com.google.firebase.database.DatabaseReference

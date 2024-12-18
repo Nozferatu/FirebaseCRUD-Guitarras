@@ -1,6 +1,7 @@
-package com.cmj.firebasecrud_guitarras
+package com.cmj.firebasecrud_guitarras.pojo
 
 import android.content.Context
+import com.cmj.firebasecrud_guitarras.hacerTostada
 import com.google.firebase.database.DatabaseReference
 
 class GuitarraCRUD(

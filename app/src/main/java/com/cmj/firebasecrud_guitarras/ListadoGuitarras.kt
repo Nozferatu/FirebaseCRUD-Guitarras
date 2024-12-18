@@ -8,6 +8,9 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.cmj.firebasecrud_guitarras.databinding.ActivityListadoGuitarrasBinding
+import com.cmj.firebasecrud_guitarras.pojo.AccionGuitarraAdapter
+import com.cmj.firebasecrud_guitarras.pojo.Guitarra
+import com.cmj.firebasecrud_guitarras.pojo.GuitarraAdapter
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference

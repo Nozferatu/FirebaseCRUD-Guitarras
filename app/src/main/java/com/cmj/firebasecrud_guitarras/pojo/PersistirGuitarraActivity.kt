@@ -1,16 +1,16 @@
-package com.cmj.firebasecrud_guitarras
+package com.cmj.firebasecrud_guitarras.pojo
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.cmj.firebasecrud_guitarras.R
 import com.cmj.firebasecrud_guitarras.databinding.ActivityPersistirGuitarraBinding
 import com.google.firebase.Firebase
 import com.google.firebase.FirebaseApp
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.database
-import java.text.SimpleDateFormat
 import java.util.Calendar
 
 class PersistirGuitarraActivity : AppCompatActivity() {

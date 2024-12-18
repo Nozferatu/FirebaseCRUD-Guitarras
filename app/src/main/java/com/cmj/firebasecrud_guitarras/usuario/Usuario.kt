@@ -1,4 +1,4 @@
-package com.cmj.firebasecrud_guitarras
+package com.cmj.firebasecrud_guitarras.usuario
 
 import java.io.Serializable
 

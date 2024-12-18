@@ -1,4 +1,4 @@
-package com.cmj.firebasecrud_guitarras
+package com.cmj.firebasecrud_guitarras.pojo
 
 import android.content.Context
 import android.content.Intent
@@ -10,6 +10,8 @@ import android.widget.RatingBar
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
+import com.cmj.firebasecrud_guitarras.R
+import com.cmj.firebasecrud_guitarras.hacerTostada
 import com.google.firebase.database.FirebaseDatabase
 
 class GuitarraAdapter(private val listaGuitarras: MutableList<Guitarra>, val accion: AccionGuitarraAdapter): RecyclerView.Adapter<GuitarraAdapter.GuitarraViewHolder>() {

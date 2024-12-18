@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.cmj.firebasecrud_guitarras.databinding.ActivityHomeBinding
+import com.cmj.firebasecrud_guitarras.pojo.AccionGuitarraAdapter
+import com.cmj.firebasecrud_guitarras.pojo.PersistirGuitarraActivity
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
