@@ -10,6 +10,8 @@ import com.google.firebase.Firebase
 import com.google.firebase.FirebaseApp
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.database
+import java.text.SimpleDateFormat
+import java.util.Calendar
 
 class PersistirGuitarraActivity : AppCompatActivity() {
     private val contexto = this
@@ -38,7 +40,6 @@ class PersistirGuitarraActivity : AppCompatActivity() {
         databaseRef = Firebase.database.reference
         guitarraCRUD = GuitarraCRUD(contexto, databaseRef)
 
-
         with(binding){
             var guitarra: Guitarra
 
@@ -61,8 +62,16 @@ class PersistirGuitarraActivity : AppCompatActivity() {
                 val anio = anioET.text.toString()
                 val precio = precioET.text.toString()
 
+                val calendar = Calendar.getInstance()
+                //val dateFormat = SimpleDateFormat("yyyy-MM-dd") No funciona como yo quiero
+                val fechaActual = StringBuilder()
+                    .append(calendar.get(Calendar.YEAR)).append("-")
+                    .append(calendar.get(Calendar.MONTH) + 1).append("-")
+                    .append(calendar.get(Calendar.DATE)).toString()
+
                 guitarra = Guitarra(
                     guitarraIntent?.key ?: "",
+                    fechaActual,
                     nombre,
                     descripcion,
                     marca,

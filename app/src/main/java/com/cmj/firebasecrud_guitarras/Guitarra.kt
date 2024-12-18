@@ -4,6 +4,7 @@ import java.io.Serializable
 
 data class Guitarra(
     var key: String? = "",
+    var fechaCreacion: String? = "2000-01-01",
     var nombre: String? = "",
     var descripcion: String? = "",
     var marca: String? = "",
